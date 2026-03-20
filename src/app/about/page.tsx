@@ -1,0 +1,138 @@
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Austin Premier Concrete",
+  description:
+    "Austin Premier Concrete — 15+ years serving Austin, TX homeowners and businesses with expert concrete work. Licensed, insured, family-owned.",
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      <Header />
+      <main className="flex-1">
+        {/* Hero */}
+        <section className="bg-gray-900 text-white py-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-orange-400 font-semibold uppercase tracking-widest text-sm mb-2">Our Story</p>
+            <h1 className="text-white mb-4">About Austin Premier Concrete</h1>
+            <p className="text-gray-300 max-w-2xl">
+              Family-owned and operated out of Austin, TX since 2009. We&apos;ve built our
+              reputation one pour at a time — with honest pricing, quality work, and a crew
+              that treats your property like their own.
+            </p>
+          </div>
+        </section>
+
+        {/* Story section */}
+        <section className="section-padding bg-white">
+          <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="mb-4">Built on Austin Dirt</h2>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Austin Premier Concrete was founded in 2009 by brothers Marco and Danny Reyes, who
+                grew up in South Austin and learned the trade working summers with their uncle&apos;s
+                crew. What started as a two-man driveway operation has grown into a full-service
+                concrete contractor trusted by thousands of Austin-area homeowners and builders.
+              </p>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                We specialize in residential and light commercial concrete — driveways, patios,
+                foundations, flatwork, retaining walls, and repair. Every project gets the same
+                attention whether it&apos;s a 200 sq ft sidewalk or a 3,000 sq ft foundation slab.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Austin&apos;s clay soils and extreme heat are tough on concrete. That&apos;s why we take
+                sub-base prep, reinforcement, and curing seriously — so your concrete lasts 20, 30,
+                even 40 years without major repairs.
+              </p>
+            </div>
+            <div className="bg-gray-100 rounded-2xl p-10 text-center">
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { stat: "15+", label: "Years in Austin" },
+                  { stat: "2,500+", label: "Projects Completed" },
+                  { stat: "5★", label: "Average Rating" },
+                  { stat: "100%", label: "Licensed & Insured" },
+                ].map((item) => (
+                  <div key={item.label} className="bg-white rounded-xl p-6 shadow-sm">
+                    <div className="text-4xl font-bold font-display text-orange-600 mb-1">{item.stat}</div>
+                    <div className="text-gray-600 text-sm">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Values */}
+        <section className="section-padding section-alt">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="mb-10">How We Work</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: "📋",
+                  title: "Honest Estimates",
+                  desc: "We visit every site before quoting. No guessing, no ballparks — you get a detailed written estimate with line items.",
+                },
+                {
+                  icon: "👷",
+                  title: "Our Own Crew",
+                  desc: "We don't subcontract your job out to strangers. The team you meet at the estimate is the team that pours your concrete.",
+                },
+                {
+                  icon: "🤝",
+                  title: "Guaranteed Work",
+                  desc: "We stand behind every project. If something isn't right, we make it right — no hassle, no excuses.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="bg-white rounded-xl p-8 shadow-sm">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="mb-2">{item.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Service area */}
+        <section className="section-padding bg-white">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <h2 className="mb-4">Serving Greater Austin</h2>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+              We work throughout Austin and the surrounding metro — from Round Rock in the north
+              to Kyle and Buda in the south, Cedar Park to the northwest, and Pflugerville to the east.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                "Austin", "Round Rock", "Cedar Park", "Pflugerville",
+                "Georgetown", "Kyle", "Buda", "Leander", "Manor", "Hutto",
+              ].map((city) => (
+                <span key={city} className="bg-orange-50 border border-orange-200 text-orange-700 px-4 py-2 rounded-full text-sm font-medium">
+                  {city}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-orange-600 text-white py-14 px-4 text-center">
+          <h2 className="text-white mb-4">Let&apos;s Talk About Your Project</h2>
+          <p className="text-orange-100 mb-6">Free estimates. No pressure. Just honest concrete work.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="tel:+15127890000" className="bg-white text-orange-600 font-bold px-8 py-4 rounded-md hover:bg-orange-50 transition-colors">
+              📞 (512) 789-0000
+            </a>
+            <Link href="/contact" className="btn-outline-white">Request Estimate Online</Link>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
