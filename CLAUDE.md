@@ -58,3 +58,22 @@ Load Google Fonts via a `<link>` tag in `layout.tsx` `<head>`, or via `@import u
 - Run `npm run build` locally before pushing if possible
 - Check `package.json` for the actual Tailwind version before writing CSS
 - Never copy globals.css patterns from v3 projects into v4 projects
+
+### 5. tailwind.config.ts — v3 vs v4
+In **Tailwind v4**, `tailwind.config.ts` is largely obsolete. Do NOT use a v3-style config with:
+- `darkMode: ["class"]` — breaks TypeScript in v4
+- `theme.extend.colors` with `hsl(var(--xxx))` — these are shadcn/ui patterns, not plain Tailwind
+- shadcn/ui accordion keyframes, custom border-radius vars, etc.
+
+**For v4 projects:** replace the config with an empty stub:
+```ts
+// tailwind.config.ts
+export default {};
+```
+All theme customization goes in `globals.css` using `@theme { }`.
+
+**Quick checklist before pushing any new site to Vercel:**
+1. `globals.css` uses `@import "tailwindcss"` (not `@tailwind base/components/utilities`)
+2. No `border-border`, `bg-background`, `bg-primary`, `bg-secondary` etc. in CSS or JSX unless shadcn is installed
+3. `tailwind.config.ts` is either empty stub or valid v4 config (no `darkMode: ["class"]`)
+4. No `hsl(var(--xxx))` color references in `@apply` or custom CSS utilities
