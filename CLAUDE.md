@@ -77,3 +77,42 @@ All theme customization goes in `globals.css` using `@theme { }`.
 2. No `border-border`, `bg-background`, `bg-primary`, `bg-secondary` etc. in CSS or JSX unless shadcn is installed
 3. `tailwind.config.ts` is either empty stub or valid v4 config (no `darkMode: ["class"]`)
 4. No `hsl(var(--xxx))` color references in `@apply` or custom CSS utilities
+
+---
+
+## Next.js Version Rules — Vercel Compatibility
+
+### 6. Do NOT use Next.js 16.x (as of March 2026)
+Next.js 16.x builds successfully on Vercel but the **deployment returns 404 NOT_FOUND** at the infrastructure level — Vercel's serving layer cannot handle the output format. This is a Vercel/Next.js 16 compatibility issue.
+
+**Symptoms:**
+- Build log shows `✓ Compiled successfully`, `Deployment completed`
+- Visiting the `.vercel.app` URL shows `404: NOT_FOUND Code: NOT_FOUND`
+- Even the direct deployment URL (not alias) returns 404
+- No errors in build output
+
+**Fix:** Use Next.js 15.5.x (latest stable 15).
+
+### 7. Do NOT use Next.js 15.2.4 — security vulnerability
+Next.js 15.2.4 has CVE-2025-66478. Vercel **blocks** the deployment entirely:
+```
+Error: Vulnerable version of Next.js detected, please update immediately.
+```
+
+**Fix:** Use `next@15.5.14` or higher within the 15.x line.
+
+### 8. Recommended Next.js version for Vercel (as of March 2026)
+```
+next@15.5.14
+eslint-config-next@15.5.14
+```
+This version:
+- ✅ Passes Vercel's CVE security check
+- ✅ Is served correctly by Vercel's infrastructure
+- ✅ Compatible with React 19
+- ✅ Compatible with Tailwind v4
+
+**Install with:**
+```bash
+npm install next@15.5.14 eslint-config-next@15.5.14 --save-exact
+```
