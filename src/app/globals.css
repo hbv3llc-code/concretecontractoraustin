@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 14% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 14% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 14% 17%;
+    --primary: 215 14% 17%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 22 92% 48%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 30 15% 95%;
+    --muted-foreground: 215 10% 50%;
+    --accent: 22 92% 95%;
+    --accent-foreground: 22 92% 30%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 20% 85%;
+    --input: 215 20% 85%;
+    --ring: 22 92% 48%;
+    --radius: 0.5rem;
+    --color-link: 215 60% 40%;
+    --color-bg-alt: 30 15% 95%;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.1;
+    color: hsl(var(--primary));
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: clamp(26px, 3.5vw, 42px);
+    line-height: 1.15;
+    color: hsl(var(--primary));
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: clamp(18px, 2.5vw, 24px);
+  }
+
+  h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24 px-4;
+  }
+
+  .section-alt {
+    background-color: hsl(var(--color-bg-alt));
+  }
+
+  .btn-primary {
+    @apply bg-secondary text-white font-semibold text-sm uppercase tracking-widest px-8 py-4 rounded-md hover:brightness-110 transition-all inline-flex items-center gap-2 cursor-pointer;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-semibold text-sm uppercase tracking-widest px-8 py-4 rounded-md hover:bg-primary hover:text-white transition-all inline-flex items-center gap-2 cursor-pointer;
+  }
+
+  .btn-outline-white {
+    @apply border-2 border-white text-white font-semibold text-sm uppercase tracking-widest px-8 py-4 rounded-md hover:bg-white hover:text-primary transition-all inline-flex items-center gap-2 cursor-pointer;
+  }
+
+  .card-hover {
+    @apply hover:shadow-xl hover:border-secondary/40 transition-all duration-300;
+  }
+
+  .font-display {
+    font-family: 'Oswald', sans-serif;
+  }
+}
