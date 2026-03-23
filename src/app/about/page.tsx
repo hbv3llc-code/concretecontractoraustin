@@ -15,11 +15,11 @@ export default function AboutPage() {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-gray-900 text-white py-16 px-4">
+        <section className="bg-tx-blue text-white py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <p className="text-orange-400 font-semibold uppercase tracking-widest text-sm mb-2">Our Story</p>
+            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-sm mb-2">Our Story</p>
             <h1 className="text-white mb-4">About Austin Premier Concrete</h1>
-            <p className="text-gray-300 max-w-2xl">
+            <p className="text-blue-200 max-w-2xl">
               Family-owned and operated out of Austin, TX since 2009. We&apos;ve built our
               reputation one pour at a time — with honest pricing, quality work, and a crew
               that treats your property like their own.
@@ -49,7 +49,7 @@ export default function AboutPage() {
                 even 40 years without major repairs.
               </p>
             </div>
-            <div className="bg-gray-100 rounded-2xl p-10 text-center">
+            <div className="bg-tx-blue-50 rounded-2xl p-10 text-center">
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { stat: "15+", label: "Years in Austin" },
@@ -57,8 +57,8 @@ export default function AboutPage() {
                   { stat: "5★", label: "Average Rating" },
                   { stat: "100%", label: "Licensed & Insured" },
                 ].map((item) => (
-                  <div key={item.label} className="bg-white rounded-xl p-6 shadow-sm">
-                    <div className="text-4xl font-bold font-display text-orange-600 mb-1">{item.stat}</div>
+                  <div key={item.label} className="bg-white rounded-xl p-6 shadow-sm border border-tx-blue-100">
+                    <div className="text-4xl font-bold font-display text-tx-red mb-1">{item.stat}</div>
                     <div className="text-gray-600 text-sm">{item.label}</div>
                   </div>
                 ))}
@@ -89,9 +89,9 @@ export default function AboutPage() {
                   desc: "We stand behind every project. If something isn't right, we make it right — no hassle, no excuses.",
                 },
               ].map((item) => (
-                <div key={item.title} className="bg-white rounded-xl p-8 shadow-sm">
+                <div key={item.title} className="bg-white rounded-xl p-8 shadow-sm border border-tx-blue-100">
                   <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="mb-2">{item.title}</h3>
+                  <h3 className="mb-2 text-tx-blue">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -112,7 +112,7 @@ export default function AboutPage() {
                 "Austin", "Round Rock", "Cedar Park", "Pflugerville",
                 "Georgetown", "Kyle", "Buda", "Leander", "Manor", "Hutto",
               ].map((city) => (
-                <span key={city} className="bg-orange-50 border border-orange-200 text-orange-700 px-4 py-2 rounded-full text-sm font-medium">
+                <span key={city} className="bg-tx-blue-50 border border-tx-blue-100 text-tx-blue px-4 py-2 rounded-full text-sm font-medium">
                   {city}
                 </span>
               ))}
@@ -121,11 +121,11 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-orange-600 text-white py-14 px-4 text-center">
+        <section className="bg-tx-red text-white py-14 px-4 text-center">
           <h2 className="text-white mb-4">Let&apos;s Talk About Your Project</h2>
-          <p className="text-orange-100 mb-6">Free estimates. No pressure. Just honest concrete work.</p>
+          <p className="text-red-100 mb-6">Free estimates. No pressure. Just honest concrete work.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+15127890000" className="bg-white text-orange-600 font-bold px-8 py-4 rounded-md hover:bg-orange-50 transition-colors">
+            <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors">
               📞 (512) 789-0000
             </a>
             <Link href="/contact" className="btn-outline-white">Request Estimate Online</Link>

@@ -16,11 +16,11 @@ export default function FAQPage() {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-gray-900 text-white py-16 px-4">
+        <section className="bg-tx-blue text-white py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <p className="text-orange-400 font-semibold uppercase tracking-widest text-sm mb-2">Got Questions?</p>
+            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-sm mb-2">Got Questions?</p>
             <h1 className="text-white mb-4">Frequently Asked Questions</h1>
-            <p className="text-gray-300 max-w-2xl">
+            <p className="text-blue-200 max-w-2xl">
               Everything you need to know about our concrete services, process, pricing, and more.
               Don&apos;t see your question? Give us a call.
             </p>
@@ -33,14 +33,14 @@ export default function FAQPage() {
             <div className="divide-y divide-gray-200">
               {faqs.map((faq, i) => (
                 <div key={i} className="py-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
+                  <h3 className="text-lg font-bold text-tx-blue mb-3">{faq.question}</h3>
                   <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10 bg-orange-50 border border-orange-200 rounded-xl p-8 text-center">
-              <h3 className="mb-2">Still Have Questions?</h3>
+            <div className="mt-10 bg-tx-blue-50 border border-tx-blue-100 rounded-xl p-8 text-center">
+              <h3 className="mb-2 text-tx-blue">Still Have Questions?</h3>
               <p className="text-gray-600 mb-4 text-sm">
                 We&apos;re happy to answer any question about your project — no obligation.
               </p>

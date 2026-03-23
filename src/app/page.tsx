@@ -11,16 +11,20 @@ export default function HomePage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="bg-gray-900 text-white py-24 px-4 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900 opacity-90" />
+        <section className="bg-tx-blue text-white py-24 px-4 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-tx-blue-700 via-tx-blue to-tx-blue-600 opacity-90" />
+          {/* Subtle star accent */}
+          <div className="absolute right-0 top-0 w-64 h-64 opacity-5 flex items-center justify-center text-[16rem] select-none pointer-events-none">
+            ★
+          </div>
           <div className="relative max-w-6xl mx-auto">
-            <p className="text-orange-400 font-semibold uppercase tracking-widest text-sm mb-4">
+            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-sm mb-4">
               Austin&apos;s Trusted Concrete Contractor
             </p>
             <h1 className="text-white text-5xl sm:text-6xl font-bold font-display leading-tight mb-6 max-w-3xl">
               Concrete Work Done Right — Guaranteed
             </h1>
-            <p className="text-gray-300 text-lg mb-8 max-w-xl leading-relaxed">
+            <p className="text-blue-200 text-lg mb-8 max-w-xl leading-relaxed">
               Driveways, patios, foundations &amp; flatwork across Austin, TX. Licensed, insured, and
               backed by 15+ years of local expertise. Free estimates — no pressure.
             </p>
@@ -34,9 +38,9 @@ export default function HomePage() {
             </div>
 
             {/* Trust badges */}
-            <div className="mt-12 flex flex-wrap gap-6 text-sm text-gray-400">
+            <div className="mt-12 flex flex-wrap gap-6 text-sm text-blue-200">
               {["✅ Licensed & Insured", "⭐ 5-Star Rated", "📋 Free Written Estimates", "🏆 15+ Years Experience"].map((b) => (
-                <span key={b} className="bg-white/10 px-3 py-1 rounded-full">{b}</span>
+                <span key={b} className="bg-white/10 border border-white/20 px-3 py-1 rounded-full">{b}</span>
               ))}
             </div>
           </div>
@@ -45,7 +49,7 @@ export default function HomePage() {
         {/* Services grid */}
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <p className="text-orange-600 font-semibold uppercase tracking-widest text-sm mb-2">What We Do</p>
+            <p className="text-tx-red font-semibold uppercase tracking-widest text-sm mb-2">What We Do</p>
             <h2 className="mb-4">Concrete Services in Austin, TX</h2>
             <p className="text-gray-600 mb-10 max-w-2xl">
               From new driveways to full foundations, we handle all types of residential and commercial
@@ -56,14 +60,14 @@ export default function HomePage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group border border-gray-200 rounded-xl p-6 hover:border-orange-400 hover:shadow-lg transition-all"
+                  className="group border border-gray-200 rounded-xl p-6 hover:border-tx-red hover:shadow-lg transition-all"
                 >
                   <div className="text-4xl mb-3">{s.icon}</div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-tx-red transition-colors">
                     {s.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{s.shortDesc}</p>
-                  <p className="mt-3 text-orange-600 font-semibold text-sm">Learn more →</p>
+                  <p className="mt-3 text-tx-red font-semibold text-sm">Learn more →</p>
                 </Link>
               ))}
             </div>
@@ -73,7 +77,7 @@ export default function HomePage() {
         {/* Why Us */}
         <section className="section-padding section-alt">
           <div className="max-w-6xl mx-auto px-4">
-            <p className="text-orange-600 font-semibold uppercase tracking-widest text-sm mb-2">Why Choose Us</p>
+            <p className="text-tx-red font-semibold uppercase tracking-widest text-sm mb-2">Why Choose Us</p>
             <h2 className="mb-10">The Austin Premier Difference</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
@@ -82,9 +86,9 @@ export default function HomePage() {
                 { icon: "🔒", title: "Licensed & Insured", desc: "Fully licensed in Texas and carrying full liability and workers' comp coverage." },
                 { icon: "⭐", title: "5-Star Reviews", desc: "Hundreds of happy customers across Austin and surrounding communities." },
               ].map((item) => (
-                <div key={item.title} className="bg-white rounded-xl p-6 shadow-sm">
+                <div key={item.title} className="bg-white rounded-xl p-6 shadow-sm border border-tx-blue-100">
                   <div className="text-3xl mb-3">{item.icon}</div>
-                  <h4 className="font-bold mb-2">{item.title}</h4>
+                  <h4 className="font-bold mb-2 text-tx-blue">{item.title}</h4>
                   <p className="text-gray-600 text-sm">{item.desc}</p>
                 </div>
               ))}
@@ -95,12 +99,12 @@ export default function HomePage() {
         {/* Reviews */}
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <p className="text-orange-600 font-semibold uppercase tracking-widest text-sm mb-2">Reviews</p>
+            <p className="text-tx-red font-semibold uppercase tracking-widest text-sm mb-2">Reviews</p>
             <h2 className="mb-10">What Austin Homeowners Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {reviews.map((r) => (
                 <div key={r.name} className="border border-gray-200 rounded-xl p-6 flex flex-col gap-3">
-                  <div className="flex text-orange-500 text-lg">{"★".repeat(r.rating)}</div>
+                  <div className="flex text-tx-red text-lg">{"★".repeat(r.rating)}</div>
                   <p className="text-gray-700 text-sm leading-relaxed">&quot;{r.text}&quot;</p>
                   <div className="mt-auto">
                     <p className="font-semibold text-gray-900">{r.name}</p>
@@ -113,15 +117,15 @@ export default function HomePage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-orange-600 text-white py-16 px-4">
+        <section className="bg-tx-red text-white py-16 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-white mb-4">Ready to Start Your Project?</h2>
-            <p className="text-orange-100 mb-8">
+            <p className="text-red-100 mb-8">
               Contact us today for a free, no-pressure estimate. We&apos;ll visit your site, measure up,
               and deliver a written quote within 24–48 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+15127890000" className="bg-white text-orange-600 font-bold px-8 py-4 rounded-md hover:bg-orange-50 transition-colors">
+              <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors">
                 📞 (512) 789-0000
               </a>
               <Link href="/contact" className="btn-outline-white">

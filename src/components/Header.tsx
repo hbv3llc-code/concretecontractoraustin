@@ -17,10 +17,10 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar */}
-      <div className="bg-gray-900 text-white text-sm py-2 px-4">
+      <div className="bg-tx-blue text-white text-sm py-2 px-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <span>📍 Serving Austin & Surrounding Areas</span>
-          <a href="tel:+15127890000" className="font-semibold hover:text-orange-400 transition-colors">
+          <a href="tel:+15127890000" className="font-semibold hover:text-tx-red-100 transition-colors">
             📞 (512) 789-0000
           </a>
         </div>
@@ -29,9 +29,9 @@ export default function Header() {
       {/* Main nav */}
       <nav className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold font-display text-gray-900 leading-none">
+          <span className="text-2xl font-bold font-display text-tx-blue leading-none">
             Austin Premier<br />
-            <span className="text-orange-600">Concrete</span>
+            <span className="text-tx-red">Concrete</span>
           </span>
         </Link>
 
@@ -41,7 +41,7 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-gray-700 font-medium hover:text-orange-600 transition-colors text-sm uppercase tracking-wide"
+                className="text-gray-700 font-medium hover:text-tx-red transition-colors text-sm uppercase tracking-wide"
               >
                 {link.label}
               </Link>
@@ -57,7 +57,7 @@ export default function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 rounded text-gray-700 hover:bg-gray-100"
+          className="md:hidden p-2 rounded text-tx-blue hover:bg-tx-blue-50"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -75,13 +75,13 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4">
+        <div className="md:hidden bg-white border-t border-tx-blue-100 px-4 pb-4">
           <ul className="flex flex-col gap-3 pt-3">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block text-gray-700 font-medium py-2 hover:text-orange-600 transition-colors"
+                  className="block text-gray-700 font-medium py-2 hover:text-tx-red transition-colors"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}

@@ -18,7 +18,7 @@ const projects = [
   { title: "Pool Deck Resurfacing", location: "Austin, TX", category: "Flatwork", bg: "bg-sky-200" },
   { title: "Residential Slab Foundation", location: "Kyle, TX", category: "Foundations", bg: "bg-zinc-300" },
   { title: "Stacked Stone Retaining Wall", location: "Austin, TX", category: "Retaining Walls", bg: "bg-stone-400" },
-  { title: "Colored Patio — Terracotta", location: "Buda, TX", category: "Patios", bg: "bg-orange-200" },
+  { title: "Colored Patio — Terracotta", location: "Buda, TX", category: "Patios", bg: "bg-red-200" },
   { title: "Commercial Sidewalk Flatwork", location: "Austin, TX", category: "Flatwork", bg: "bg-gray-200" },
   { title: "Broomed Concrete Driveway", location: "Leander, TX", category: "Driveways", bg: "bg-neutral-300" },
 ];
@@ -29,11 +29,11 @@ export default function GalleryPage() {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-gray-900 text-white py-16 px-4">
+        <section className="bg-tx-blue text-white py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <p className="text-orange-400 font-semibold uppercase tracking-widest text-sm mb-2">Our Work</p>
+            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-sm mb-2">Our Work</p>
             <h1 className="text-white mb-4">Project Gallery</h1>
-            <p className="text-gray-300 max-w-2xl">
+            <p className="text-blue-200 max-w-2xl">
               A sample of completed projects across Austin and surrounding areas.
               Every job is completed by our own crew — no subcontractors.
             </p>
@@ -48,8 +48,8 @@ export default function GalleryPage() {
                 key={cat}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap cursor-pointer transition-colors ${
                   cat === "All"
-                    ? "bg-orange-600 text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                    ? "bg-tx-blue text-white"
+                    : "bg-tx-blue-50 text-tx-blue hover:bg-tx-blue hover:text-white"
                 }`}
               >
                 {cat}
@@ -63,13 +63,13 @@ export default function GalleryPage() {
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.map((p, i) => (
-                <div key={i} className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+                <div key={i} className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-tx-blue-100 transition-shadow">
                   {/* Placeholder image block */}
                   <div className={`h-52 ${p.bg} flex items-center justify-center`}>
                     <span className="text-gray-500 text-sm font-medium opacity-60">[ Photo Coming Soon ]</span>
                   </div>
                   <div className="p-4">
-                    <span className="text-xs font-semibold text-orange-600 uppercase tracking-wider">{p.category}</span>
+                    <span className="text-xs font-semibold text-tx-red uppercase tracking-wider">{p.category}</span>
                     <h4 className="font-bold mt-1 mb-0.5">{p.title}</h4>
                     <p className="text-gray-500 text-sm">📍 {p.location}</p>
                   </div>
@@ -79,7 +79,7 @@ export default function GalleryPage() {
 
             <p className="text-center text-gray-500 text-sm mt-10">
               More photos available — call us or{" "}
-              <Link href="/contact" className="text-orange-600 font-medium hover:underline">
+              <Link href="/contact" className="text-tx-red font-medium hover:underline">
                 send a message
               </Link>{" "}
               to see examples matching your project type.
@@ -88,11 +88,11 @@ export default function GalleryPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-orange-600 text-white py-14 px-4 text-center">
+        <section className="bg-tx-red text-white py-14 px-4 text-center">
           <h2 className="text-white mb-4">Ready for Your Own Project?</h2>
-          <p className="text-orange-100 mb-6">Free estimates — we come to you.</p>
+          <p className="text-red-100 mb-6">Free estimates — we come to you.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+15127890000" className="bg-white text-orange-600 font-bold px-8 py-4 rounded-md hover:bg-orange-50 transition-colors">
+            <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors">
               📞 (512) 789-0000
             </a>
             <Link href="/contact" className="btn-outline-white">Request Estimate</Link>

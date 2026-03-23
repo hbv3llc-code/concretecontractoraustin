@@ -14,11 +14,11 @@ export default function ContactPage() {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-gray-900 text-white py-16 px-4">
+        <section className="bg-tx-blue text-white py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <p className="text-orange-400 font-semibold uppercase tracking-widest text-sm mb-2">Get In Touch</p>
+            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-sm mb-2">Get In Touch</p>
             <h1 className="text-white mb-4">Request a Free Estimate</h1>
-            <p className="text-gray-300 max-w-2xl">
+            <p className="text-blue-200 max-w-2xl">
               Fill out the form below or call us directly. We&apos;ll schedule a site visit and deliver a
               free written estimate within 24–48 hours.
             </p>
@@ -42,7 +42,7 @@ export default function ContactPage() {
                       name="firstName"
                       type="text"
                       required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-tx-blue"
                       placeholder="John"
                     />
                   </div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
                       name="lastName"
                       type="text"
                       required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-tx-blue"
                       placeholder="Smith"
                     />
                   </div>
@@ -70,7 +70,7 @@ export default function ContactPage() {
                     name="phone"
                     type="tel"
                     required
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-tx-blue"
                     placeholder="(512) 000-0000"
                   />
                 </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
                     id="email"
                     name="email"
                     type="email"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-tx-blue"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   <select
                     id="service"
                     name="service"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-tx-blue"
                   >
                     <option value="">Select a service...</option>
                     <option>Concrete Driveway</option>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                     id="address"
                     name="address"
                     type="text"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-tx-blue"
                     placeholder="Austin, TX"
                   />
                 </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={5}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 resize-none"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-tx-blue resize-none"
                     placeholder="Tell us about your project — size, current conditions, timeline, etc."
                   />
                 </div>
@@ -145,21 +145,21 @@ export default function ContactPage() {
 
             {/* Sidebar info */}
             <div className="space-y-6">
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="mb-4">Contact Info</h3>
+              <div className="bg-tx-blue-50 rounded-xl p-6 border border-tx-blue-100">
+                <h3 className="mb-4 text-tx-blue">Contact Info</h3>
                 <ul className="space-y-4 text-sm">
                   <li className="flex items-start gap-3">
                     <span className="text-xl">📞</span>
                     <div>
                       <p className="font-semibold text-gray-900">Phone</p>
-                      <a href="tel:+15127890000" className="text-orange-600 hover:underline">(512) 789-0000</a>
+                      <a href="tel:+15127890000" className="text-tx-red hover:underline">(512) 789-0000</a>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-xl">✉️</span>
                     <div>
                       <p className="font-semibold text-gray-900">Email</p>
-                      <a href="mailto:info@austinpremierconcrete.com" className="text-orange-600 hover:underline break-all">
+                      <a href="mailto:info@austinpremierconcrete.com" className="text-tx-red hover:underline break-all">
                         info@austinpremierconcrete.com
                       </a>
                     </div>
@@ -181,19 +181,19 @@ export default function ContactPage() {
                 </ul>
               </div>
 
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-                <h4 className="font-bold mb-2">Free Estimates</h4>
+              <div className="bg-tx-red-50 border border-tx-red-100 rounded-xl p-6">
+                <h4 className="font-bold mb-2 text-tx-red">Free Estimates</h4>
                 <p className="text-sm text-gray-600">
                   All estimates are free, written, and itemized. We visit your site to measure —
                   no ballpark numbers over the phone.
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h4 className="font-bold mb-3">Service Areas</h4>
+              <div className="bg-tx-blue-50 rounded-xl p-6 border border-tx-blue-100">
+                <h4 className="font-bold mb-3 text-tx-blue">Service Areas</h4>
                 <div className="flex flex-wrap gap-2">
                   {["Austin", "Round Rock", "Cedar Park", "Pflugerville", "Georgetown", "Kyle", "Buda", "Leander"].map((city) => (
-                    <span key={city} className="bg-white border border-gray-200 px-3 py-1 rounded-full text-xs text-gray-700">
+                    <span key={city} className="bg-white border border-tx-blue-100 px-3 py-1 rounded-full text-xs text-tx-blue">
                       {city}
                     </span>
                   ))}

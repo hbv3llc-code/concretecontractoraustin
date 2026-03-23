@@ -31,14 +31,14 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-gray-900 text-white py-16 px-4">
+        <section className="bg-tx-blue text-white py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <Link href="/services" className="text-orange-400 text-sm hover:underline mb-4 inline-block">
+            <Link href="/services" className="text-tx-red-100 text-sm hover:underline mb-4 inline-block">
               ← Back to Services
             </Link>
             <div className="text-5xl mb-4">{service.icon}</div>
             <h1 className="text-white mb-4">{service.title} in Austin, TX</h1>
-            <p className="text-gray-300 max-w-2xl">{service.shortDesc}</p>
+            <p className="text-blue-200 max-w-2xl">{service.shortDesc}</p>
           </div>
         </section>
 
@@ -52,8 +52,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <h3 className="mb-4">What&apos;s Included</h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {service.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 bg-gray-50 rounded-lg p-3 text-sm">
-                    <span className="text-orange-500 font-bold mt-0.5">✓</span>
+                  <li key={f} className="flex items-start gap-3 bg-tx-blue-50 rounded-lg p-3 text-sm">
+                    <span className="text-tx-red font-bold mt-0.5">✓</span>
                     <span className="text-gray-700">{f}</span>
                   </li>
                 ))}
@@ -68,8 +68,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-6 sticky top-24">
-                <h3 className="mb-2">Get a Free Estimate</h3>
+              <div className="bg-tx-blue-50 border border-tx-blue-100 rounded-xl p-6 sticky top-24">
+                <h3 className="mb-2 text-tx-blue">Get a Free Estimate</h3>
                 <p className="text-gray-600 text-sm mb-4">
                   Contact us today — we&apos;ll visit your site and deliver a written quote within 24–48 hours.
                 </p>
@@ -99,10 +99,10 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="bg-white rounded-xl p-6 border border-gray-200 hover:border-orange-400 hover:shadow-md transition-all group"
+                  className="bg-white rounded-xl p-6 border border-gray-200 hover:border-tx-blue hover:shadow-md transition-all group"
                 >
                   <div className="text-3xl mb-2">{s.icon}</div>
-                  <h4 className="font-bold mb-1 group-hover:text-orange-600 transition-colors">{s.title}</h4>
+                  <h4 className="font-bold mb-1 group-hover:text-tx-blue transition-colors">{s.title}</h4>
                   <p className="text-sm text-gray-600">{s.shortDesc}</p>
                 </Link>
               ))}
