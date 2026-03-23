@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us | Austin Premier Concrete",
@@ -149,14 +150,18 @@ export default function ContactPage() {
                 <h3 className="mb-4 text-tx-blue">Contact Info</h3>
                 <ul className="space-y-4 text-sm">
                   <li className="flex items-start gap-3">
-                    <span className="text-xl">📞</span>
+                    <div className="w-8 h-8 bg-tx-blue-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                      <Phone size={15} className="text-tx-blue" />
+                    </div>
                     <div>
                       <p className="font-semibold text-gray-900">Phone</p>
                       <a href="tel:+15127890000" className="text-tx-red hover:underline">(512) 789-0000</a>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-xl">✉️</span>
+                    <div className="w-8 h-8 bg-tx-blue-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                      <Mail size={15} className="text-tx-blue" />
+                    </div>
                     <div>
                       <p className="font-semibold text-gray-900">Email</p>
                       <a href="mailto:info@austinpremierconcrete.com" className="text-tx-red hover:underline break-all">
@@ -165,14 +170,18 @@ export default function ContactPage() {
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-xl">📍</span>
+                    <div className="w-8 h-8 bg-tx-blue-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                      <MapPin size={15} className="text-tx-blue" />
+                    </div>
                     <div>
                       <p className="font-semibold text-gray-900">Service Area</p>
                       <p className="text-gray-600">Austin, TX &amp; Surrounding Metro</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-xl">🕐</span>
+                    <div className="w-8 h-8 bg-tx-blue-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                      <Clock size={15} className="text-tx-blue" />
+                    </div>
                     <div>
                       <p className="font-semibold text-gray-900">Hours</p>
                       <p className="text-gray-600">Mon–Sat: 7:00am – 6:00pm</p>

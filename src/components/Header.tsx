@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { MapPin, Phone } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,9 +20,9 @@ export default function Header() {
       {/* Top bar */}
       <div className="bg-tx-blue text-white text-sm py-2 px-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <span>📍 Serving Austin & Surrounding Areas</span>
-          <a href="tel:+15127890000" className="font-semibold hover:text-tx-red-100 transition-colors">
-            📞 (512) 789-0000
+          <span className="flex items-center gap-1.5"><MapPin size={13} className="opacity-70" /> Serving Austin &amp; Surrounding Areas</span>
+          <a href="tel:+15127890000" className="font-semibold hover:text-tx-red-100 transition-colors flex items-center gap-1.5">
+            <Phone size={13} className="opacity-70" /> (512) 789-0000
           </a>
         </div>
       </div>

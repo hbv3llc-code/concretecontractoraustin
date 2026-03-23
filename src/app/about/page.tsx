@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import { ClipboardList, Users, ShieldCheck, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Austin Premier Concrete",
@@ -74,25 +75,27 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
                 {
-                  icon: "📋",
+                  Icon: ClipboardList,
                   title: "Honest Estimates",
                   desc: "We visit every site before quoting. No guessing, no ballparks — you get a detailed written estimate with line items.",
                 },
                 {
-                  icon: "👷",
+                  Icon: Users,
                   title: "Our Own Crew",
                   desc: "We don't subcontract your job out to strangers. The team you meet at the estimate is the team that pours your concrete.",
                 },
                 {
-                  icon: "🤝",
+                  Icon: ShieldCheck,
                   title: "Guaranteed Work",
                   desc: "We stand behind every project. If something isn't right, we make it right — no hassle, no excuses.",
                 },
-              ].map((item) => (
-                <div key={item.title} className="bg-white rounded-xl p-8 shadow-sm border border-tx-blue-100">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="mb-2 text-tx-blue">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              ].map(({ Icon, title, desc }) => (
+                <div key={title} className="bg-white rounded-xl p-8 shadow-sm border border-tx-blue-100">
+                  <div className="w-10 h-10 bg-tx-blue-50 rounded-lg flex items-center justify-center mb-4">
+                    <Icon size={20} className="text-tx-blue" />
+                  </div>
+                  <h3 className="mb-2 text-tx-blue">{title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
@@ -125,8 +128,8 @@ export default function AboutPage() {
           <h2 className="text-white mb-4">Let&apos;s Talk About Your Project</h2>
           <p className="text-red-100 mb-6">Free estimates. No pressure. Just honest concrete work.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors">
-              📞 (512) 789-0000
+            <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors inline-flex items-center gap-2">
+              <Phone size={16} /> (512) 789-0000
             </a>
             <Link href="/contact" className="btn-outline-white">Request Estimate Online</Link>
           </div>

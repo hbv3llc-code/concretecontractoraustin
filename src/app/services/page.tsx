@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { services } from "@/data/services";
 import type { Metadata } from "next";
+import { Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Concrete Services Austin TX | Austin Premier Concrete",
@@ -31,8 +32,7 @@ export default function ServicesPage() {
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((s) => (
-              <div key={s.slug} className="border border-gray-200 rounded-xl p-8 flex flex-col gap-4 hover:shadow-lg hover:border-tx-blue-100 transition-shadow">
-                <div className="text-5xl">{s.icon}</div>
+              <div key={s.slug} className="border border-gray-200 border-t-4 border-t-tx-blue rounded-xl p-8 flex flex-col gap-4 hover:shadow-lg hover:border-t-tx-red transition-all">
                 <h2 className="text-2xl font-bold">{s.title}</h2>
                 <p className="text-gray-600 leading-relaxed">{s.longDesc}</p>
                 <ul className="grid grid-cols-2 gap-2 mt-2">
@@ -55,8 +55,8 @@ export default function ServicesPage() {
           <h2 className="text-white mb-4">Get a Free Estimate Today</h2>
           <p className="text-red-100 mb-6">No obligation. We come to you, measure up, and give you a written quote.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors">
-              📞 (512) 789-0000
+            <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors inline-flex items-center gap-2">
+              <Phone size={16} /> (512) 789-0000
             </a>
             <Link href="/contact" className="btn-outline-white">Request Online</Link>
           </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -60,17 +61,21 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-3 uppercase tracking-wider text-xs">Contact</h4>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href="tel:+15127890000" className="text-blue-200 hover:text-white transition-colors">
-                📞 (512) 789-0000
+              <a href="tel:+15127890000" className="text-blue-200 hover:text-white transition-colors flex items-center gap-2">
+                <Phone size={14} className="opacity-60 shrink-0" /> (512) 789-0000
               </a>
             </li>
             <li>
-              <a href="mailto:info@austinpremierconcrete.com" className="text-blue-200 hover:text-white transition-colors">
-                ✉️ info@austinpremierconcrete.com
+              <a href="mailto:info@austinpremierconcrete.com" className="text-blue-200 hover:text-white transition-colors flex items-center gap-2">
+                <Mail size={14} className="opacity-60 shrink-0" /> info@austinpremierconcrete.com
               </a>
             </li>
-            <li className="text-blue-200">📍 Austin, TX &amp; Surrounding Areas</li>
-            <li className="text-blue-200">🕐 Mon–Sat: 7am – 6pm</li>
+            <li className="text-blue-200 flex items-center gap-2">
+              <MapPin size={14} className="opacity-60 shrink-0" /> Austin, TX &amp; Surrounding Areas
+            </li>
+            <li className="text-blue-200 flex items-center gap-2">
+              <Clock size={14} className="opacity-60 shrink-0" /> Mon–Sat: 7am – 6pm
+            </li>
           </ul>
         </div>
       </div>

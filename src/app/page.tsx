@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { services } from "@/data/services";
 import { reviews } from "@/data/reviews";
+import { Award, ClipboardList, ShieldCheck, Star, Phone } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -11,36 +12,45 @@ export default function HomePage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="bg-tx-blue text-white py-24 px-4 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-tx-blue-700 via-tx-blue to-tx-blue-600 opacity-90" />
-          {/* Subtle star accent */}
-          <div className="absolute right-0 top-0 w-64 h-64 opacity-5 flex items-center justify-center text-[16rem] select-none pointer-events-none">
-            ★
-          </div>
+        <section className="bg-tx-blue text-white py-28 px-4 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-tx-blue-700 via-tx-blue to-tx-blue-600" />
+          {/* Subtle geometric accent */}
+          <div className="absolute right-0 top-0 h-full w-1/2 opacity-[0.04] pointer-events-none"
+            style={{ background: "repeating-linear-gradient(135deg, #fff 0, #fff 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }} />
           <div className="relative max-w-6xl mx-auto">
-            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-sm mb-4">
-              Austin&apos;s Trusted Concrete Contractor
+            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-xs mb-5 border-l-2 border-tx-red pl-3">
+              Austin&apos;s Premier Concrete Contractor
             </p>
             <h1 className="text-white text-5xl sm:text-6xl font-bold font-display leading-tight mb-6 max-w-3xl">
-              Concrete Work Done Right — Guaranteed
+              Austin&apos;s Concrete Contractor — Built on Reputation
             </h1>
-            <p className="text-blue-200 text-lg mb-8 max-w-xl leading-relaxed">
-              Driveways, patios, foundations &amp; flatwork across Austin, TX. Licensed, insured, and
-              backed by 15+ years of local expertise. Free estimates — no pressure.
+            <p className="text-blue-200 text-lg mb-10 max-w-2xl leading-relaxed">
+              Precision concrete installation for driveways, patios, foundations, and flatwork.
+              Serving the greater Austin metro since 2009 with licensed crews, transparent pricing,
+              and a written satisfaction guarantee.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="tel:+15127890000" className="btn-primary">
-                📞 Call Now — Free Estimate
+              <a href="tel:+15127890000" className="btn-primary inline-flex items-center gap-2">
+                <Phone size={16} />
+                Call Now — Free Estimate
               </a>
               <Link href="/services" className="btn-outline-white">
-                View Services
+                View Our Services
               </Link>
             </div>
 
             {/* Trust badges */}
-            <div className="mt-12 flex flex-wrap gap-6 text-sm text-blue-200">
-              {["✅ Licensed & Insured", "⭐ 5-Star Rated", "📋 Free Written Estimates", "🏆 15+ Years Experience"].map((b) => (
-                <span key={b} className="bg-white/10 border border-white/20 px-3 py-1 rounded-full">{b}</span>
+            <div className="mt-12 flex flex-wrap gap-4 text-sm text-blue-200">
+              {[
+                "Licensed & Insured",
+                "5-Star Rated",
+                "Free Written Estimates",
+                "15+ Years Experience",
+              ].map((b) => (
+                <span key={b} className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
+                  <span className="w-1.5 h-1.5 rounded-full bg-tx-red inline-block shrink-0" />
+                  {b}
+                </span>
               ))}
             </div>
           </div>
@@ -49,7 +59,7 @@ export default function HomePage() {
         {/* Services grid */}
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <p className="text-tx-red font-semibold uppercase tracking-widest text-sm mb-2">What We Do</p>
+            <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">What We Do</p>
             <h2 className="mb-4">Concrete Services in Austin, TX</h2>
             <p className="text-gray-600 mb-10 max-w-2xl">
               From new driveways to full foundations, we handle all types of residential and commercial
@@ -60,14 +70,13 @@ export default function HomePage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group border border-gray-200 rounded-xl p-6 hover:border-tx-red hover:shadow-lg transition-all"
+                  className="group border border-gray-200 rounded-xl p-6 hover:border-tx-red hover:shadow-lg transition-all border-t-4 border-t-tx-blue-100 hover:border-t-tx-red"
                 >
-                  <div className="text-4xl mb-3">{s.icon}</div>
                   <h3 className="text-xl font-bold mb-2 group-hover:text-tx-red transition-colors">
                     {s.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{s.shortDesc}</p>
-                  <p className="mt-3 text-tx-red font-semibold text-sm">Learn more →</p>
+                  <p className="mt-4 text-tx-red font-semibold text-sm">Learn more →</p>
                 </Link>
               ))}
             </div>
@@ -77,19 +86,21 @@ export default function HomePage() {
         {/* Why Us */}
         <section className="section-padding section-alt">
           <div className="max-w-6xl mx-auto px-4">
-            <p className="text-tx-red font-semibold uppercase tracking-widest text-sm mb-2">Why Choose Us</p>
+            <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Why Choose Us</p>
             <h2 className="mb-10">The Austin Premier Difference</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: "🏆", title: "15+ Years Experience", desc: "Deep roots in Austin's concrete industry with thousands of completed projects." },
-                { icon: "📋", title: "Free Written Estimates", desc: "Detailed, itemized quotes — no vague ballparks, no surprise charges." },
-                { icon: "🔒", title: "Licensed & Insured", desc: "Fully licensed in Texas and carrying full liability and workers' comp coverage." },
-                { icon: "⭐", title: "5-Star Reviews", desc: "Hundreds of happy customers across Austin and surrounding communities." },
-              ].map((item) => (
-                <div key={item.title} className="bg-white rounded-xl p-6 shadow-sm border border-tx-blue-100">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <h4 className="font-bold mb-2 text-tx-blue">{item.title}</h4>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                { Icon: Award, title: "15+ Years Experience", desc: "Deep roots in Austin's concrete industry with thousands of completed projects." },
+                { Icon: ClipboardList, title: "Free Written Estimates", desc: "Detailed, itemized quotes — no vague ballparks, no surprise charges." },
+                { Icon: ShieldCheck, title: "Licensed & Insured", desc: "Fully licensed in Texas and carrying full liability and workers' comp coverage." },
+                { Icon: Star, title: "5-Star Reviews", desc: "Hundreds of happy customers across Austin and surrounding communities." },
+              ].map(({ Icon, title, desc }) => (
+                <div key={title} className="bg-white rounded-xl p-6 shadow-sm border border-tx-blue-100">
+                  <div className="w-10 h-10 bg-tx-blue-50 rounded-lg flex items-center justify-center mb-4">
+                    <Icon size={20} className="text-tx-blue" />
+                  </div>
+                  <h4 className="font-bold mb-2 text-tx-blue">{title}</h4>
+                  <p className="text-gray-600 text-sm">{desc}</p>
                 </div>
               ))}
             </div>
@@ -99,7 +110,7 @@ export default function HomePage() {
         {/* Reviews */}
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <p className="text-tx-red font-semibold uppercase tracking-widest text-sm mb-2">Reviews</p>
+            <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Reviews</p>
             <h2 className="mb-10">What Austin Homeowners Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {reviews.map((r) => (
@@ -125,8 +136,9 @@ export default function HomePage() {
               and deliver a written quote within 24–48 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors">
-                📞 (512) 789-0000
+              <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors inline-flex items-center gap-2">
+                <Phone size={16} />
+                (512) 789-0000
               </a>
               <Link href="/contact" className="btn-outline-white">
                 Request Estimate Online
