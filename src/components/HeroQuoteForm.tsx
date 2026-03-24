@@ -18,7 +18,7 @@ const serviceOptions = [
 const inputClass =
   "w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-tx-blue bg-gray-50";
 
-export default function HeroQuoteForm() {
+export default function HeroQuoteForm({ id = "hero-quote-form" }: { id?: string }) {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
@@ -29,7 +29,7 @@ export default function HeroQuoteForm() {
   if (submitted) {
     return (
       <div
-        id="hero-quote-form"
+        id={id}
         className="bg-white rounded-2xl p-8 shadow-2xl text-center flex flex-col items-center justify-center min-h-[380px]"
       >
         <CheckCircle size={52} className="text-green-500 mb-4" />
@@ -42,7 +42,7 @@ export default function HeroQuoteForm() {
   }
 
   return (
-    <div id="hero-quote-form" className="bg-white rounded-2xl p-7 shadow-2xl">
+    <div id={id} className="bg-white rounded-2xl p-7 shadow-2xl">
       <h3 className="text-tx-blue text-xl font-bold mb-0.5">Get Your Free Estimate</h3>
       <p className="text-gray-500 text-sm mb-5">We respond within 24 hours. No pressure.</p>
       <form onSubmit={handleSubmit} className="space-y-3">

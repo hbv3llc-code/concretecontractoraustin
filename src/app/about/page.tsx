@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import QuoteSection from "@/components/QuoteSection";
 import type { Metadata } from "next";
-import { ClipboardList, Users, ShieldCheck, Phone } from "lucide-react";
+import { ClipboardList, Users, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Austin Premier Concrete",
@@ -15,16 +15,33 @@ export default function AboutPage() {
     <>
       <Header />
       <main className="flex-1">
+
         {/* Hero */}
-        <section className="bg-tx-blue text-white py-16 px-4">
-          <div className="max-w-6xl mx-auto">
-            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-sm mb-2">Our Story</p>
+        <section className="bg-tx-blue text-white py-16 px-4 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-tx-blue-700 via-tx-blue to-tx-blue-600" aria-hidden="true" />
+          <div
+            className="absolute right-0 top-0 h-full w-1/2 opacity-[0.04] pointer-events-none"
+            style={{ background: "repeating-linear-gradient(135deg, #fff 0, #fff 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }}
+            aria-hidden="true"
+          />
+          <div className="relative max-w-6xl mx-auto">
+            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-xs mb-5 border-l-2 border-tx-red pl-3">
+              Our Story
+            </p>
             <h1 className="text-white mb-4">About Austin Premier Concrete</h1>
-            <p className="text-blue-200 max-w-2xl">
+            <p className="text-blue-200 max-w-2xl text-lg">
               Family-owned and operated out of Austin, TX since 2009. We&apos;ve built our
               reputation one pour at a time — with honest pricing, quality work, and a crew
               that treats your property like their own.
             </p>
+            <div className="mt-8 flex flex-wrap gap-3 text-sm text-blue-200">
+              {["Family-Owned Since 2009", "Licensed & Insured", "2,500+ Projects", "5-Star Rated"].map((b) => (
+                <span key={b} className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
+                  <span className="w-1.5 h-1.5 rounded-full bg-tx-red inline-block shrink-0" />
+                  {b}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -32,6 +49,7 @@ export default function AboutPage() {
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
+              <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Our History</p>
               <h2 className="mb-4">Built on Austin Dirt</h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 Austin Premier Concrete was founded in 2009 by brothers Marco and Danny Reyes, who
@@ -50,7 +68,7 @@ export default function AboutPage() {
                 even 40 years without major repairs.
               </p>
             </div>
-            <div className="bg-tx-blue-50 rounded-2xl p-10 text-center">
+            <div className="bg-tx-blue-50 rounded-2xl p-10 border border-tx-blue-100">
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { stat: "15+", label: "Years in Austin" },
@@ -58,7 +76,7 @@ export default function AboutPage() {
                   { stat: "5★", label: "Average Rating" },
                   { stat: "100%", label: "Licensed & Insured" },
                 ].map((item) => (
-                  <div key={item.label} className="bg-white rounded-xl p-6 shadow-sm border border-tx-blue-100">
+                  <div key={item.label} className="bg-white rounded-xl p-6 shadow-sm border border-tx-blue-100 text-center">
                     <div className="text-4xl font-bold font-display text-tx-red mb-1">{item.stat}</div>
                     <div className="text-gray-600 text-sm">{item.label}</div>
                   </div>
@@ -71,6 +89,7 @@ export default function AboutPage() {
         {/* Values */}
         <section className="section-padding section-alt">
           <div className="max-w-6xl mx-auto px-4">
+            <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Our Approach</p>
             <h2 className="mb-10">How We Work</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
@@ -105,6 +124,7 @@ export default function AboutPage() {
         {/* Service area */}
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4 text-center">
+            <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Where We Work</p>
             <h2 className="mb-4">Serving Greater Austin</h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               We work throughout Austin and the surrounding metro — from Round Rock in the north
@@ -123,17 +143,13 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="bg-tx-red text-white py-14 px-4 text-center">
-          <h2 className="text-white mb-4">Let&apos;s Talk About Your Project</h2>
-          <p className="text-red-100 mb-6">Free estimates. No pressure. Just honest concrete work.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors inline-flex items-center gap-2">
-              <Phone size={16} /> (512) 789-0000
-            </a>
-            <Link href="/contact" className="btn-outline-white">Request Estimate Online</Link>
-          </div>
-        </section>
+        {/* Quote form */}
+        <QuoteSection
+          heading="Let's Talk About Your Project"
+          subheading="Free estimates. No pressure. Just honest concrete work from a crew that's been serving Austin for over 15 years."
+          formId="about-quote-form"
+        />
+
       </main>
       <Footer />
     </>
