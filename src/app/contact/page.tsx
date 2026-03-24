@@ -29,8 +29,8 @@ export default function ContactPage() {
             </p>
             <h1 className="text-white mb-4">Request a Free Estimate</h1>
             <p className="text-blue-200 max-w-2xl text-lg">
-              Fill out the form below or call us directly. We&apos;ll schedule a site visit and deliver a
-              free written estimate within 24–48 hours.
+              Fill out the form below or call us directly. We&apos;ll schedule a site visit and
+              deliver a free written estimate within 24–48 hours.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 text-sm text-blue-200">
               {["No Obligation", "Free Written Estimate", "Site Visit Included", "24–48 Hr Response"].map((b) => (
@@ -123,10 +123,10 @@ export default function ContactPage() {
                     <option>Concrete Patio</option>
                     <option>Concrete Foundation</option>
                     <option>Flatwork / Sidewalk</option>
-                    <option>Stamped & Decorative Concrete</option>
-                    <option>Concrete Repair & Resurfacing</option>
+                    <option>Stamped &amp; Decorative Concrete</option>
+                    <option>Concrete Repair &amp; Resurfacing</option>
                     <option>Retaining Wall</option>
-                    <option>Concrete Removal & Demolition</option>
+                    <option>Concrete Removal &amp; Demolition</option>
                     <option>Commercial Concrete</option>
                     <option>Other / Not Sure</option>
                   </select>
@@ -167,54 +167,56 @@ export default function ContactPage() {
               </form>
             </div>
 
-            {/* Sidebar info */}
+            {/* Sidebar */}
             <div className="space-y-5">
-              <div className="bg-tx-blue rounded-xl p-6 text-white">
-                <h3 className="text-white mb-4">Contact Info</h3>
+              <div className="bg-tx-blue rounded-xl p-6">
+                <h3 className="text-white mb-5">Contact Info</h3>
                 <ul className="space-y-4 text-sm">
                   <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
                       <Phone size={15} className="text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-blue-100 text-xs uppercase tracking-wider mb-0.5">Phone</p>
-                      <a href="tel:+15127890000" className="text-white font-bold hover:text-tx-red-100 transition-colors">(512) 789-0000</a>
+                      <p className="text-blue-200 text-xs uppercase tracking-wider mb-0.5">Phone</p>
+                      <a href="tel:+15127890000" className="text-white font-bold hover:text-tx-red-100 transition-colors">
+                        (512) 789-0000
+                      </a>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
                       <Mail size={15} className="text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-blue-100 text-xs uppercase tracking-wider mb-0.5">Email</p>
+                      <p className="text-blue-200 text-xs uppercase tracking-wider mb-0.5">Email</p>
                       <a href="mailto:info@austinpremierconcrete.com" className="text-white hover:text-tx-red-100 transition-colors break-all text-sm">
                         info@austinpremierconcrete.com
                       </a>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
                       <MapPin size={15} className="text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-blue-100 text-xs uppercase tracking-wider mb-0.5">Service Area</p>
+                      <p className="text-blue-200 text-xs uppercase tracking-wider mb-0.5">Service Area</p>
                       <p className="text-white">Austin, TX &amp; Surrounding Metro</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
                       <Clock size={15} className="text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-blue-100 text-xs uppercase tracking-wider mb-0.5">Hours</p>
+                      <p className="text-blue-200 text-xs uppercase tracking-wider mb-0.5">Hours</p>
                       <p className="text-white">Mon–Sat: 7:00am – 6:00pm</p>
                     </div>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-tx-red rounded-xl p-6 text-white">
-                <h4 className="font-bold text-white mb-2 text-lg">Free Written Estimates</h4>
+              <div className="bg-tx-red rounded-xl p-6">
+                <h4 className="font-bold text-white text-lg mb-2">Free Written Estimates</h4>
                 <p className="text-red-100 text-sm leading-relaxed">
                   All estimates are free, written, and itemized. We visit your site to measure —
                   no ballpark numbers over the phone.
@@ -222,7 +224,7 @@ export default function ContactPage() {
               </div>
 
               <div className="bg-tx-blue-50 rounded-xl p-6 border border-tx-blue-100">
-                <h4 className="font-bold mb-3 text-tx-blue">Cities We Serve</h4>
+                <h4 className="font-bold mb-3 text-tx-blue text-base">Cities We Serve</h4>
                 <div className="flex flex-wrap gap-2">
                   {["Austin", "Round Rock", "Cedar Park", "Pflugerville", "Georgetown", "Kyle", "Buda", "Leander"].map((city) => (
                     <span key={city} className="bg-white border border-tx-blue-100 px-3 py-1 rounded-full text-xs text-tx-blue font-medium">
@@ -230,20 +232,6 @@ export default function ContactPage() {
                     </span>
                   ))}
                 </div>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-xl p-6">
-                <ul className="space-y-2 text-sm text-gray-700">
-                  {[
-                    "✅ Licensed & Insured in Texas",
-                    "✅ Free written estimates",
-                    "✅ No-pressure quotes",
-                    "✅ 5-star rated on Google",
-                    "✅ 15+ years experience",
-                  ].map((item) => (
-                    <li key={item} className="font-medium">{item}</li>
-                  ))}
-                </ul>
               </div>
             </div>
 

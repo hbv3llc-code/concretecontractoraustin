@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import QuoteSection from "@/components/QuoteSection";
+import HeroQuoteForm from "@/components/HeroQuoteForm";
 import type { Metadata } from "next";
 import { ClipboardList, Users, ShieldCheck } from "lucide-react";
 
@@ -16,38 +16,40 @@ export default function AboutPage() {
       <Header />
       <main className="flex-1">
 
-        {/* Hero */}
-        <section className="bg-tx-blue text-white py-16 px-4 relative overflow-hidden">
+        {/* Hero — 2-column with embedded quote form */}
+        <section className="bg-tx-blue text-white py-20 px-4 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-tx-blue-700 via-tx-blue to-tx-blue-600" aria-hidden="true" />
           <div
             className="absolute right-0 top-0 h-full w-1/2 opacity-[0.04] pointer-events-none"
             style={{ background: "repeating-linear-gradient(135deg, #fff 0, #fff 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }}
             aria-hidden="true"
           />
-          <div className="relative max-w-6xl mx-auto">
-            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-xs mb-5 border-l-2 border-tx-red pl-3">
-              Our Story
-            </p>
-            <h1 className="text-white mb-4">About Austin Premier Concrete</h1>
-            <p className="text-blue-200 max-w-2xl text-lg">
-              Family-owned and operated out of Austin, TX since 2009. We&apos;ve built our
-              reputation one pour at a time — with honest pricing, quality work, and a crew
-              that treats your property like their own.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3 text-sm text-blue-200">
-              {["Family-Owned Since 2009", "Licensed & Insured", "2,500+ Projects", "5-Star Rated"].map((b) => (
-                <span key={b} className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-tx-red inline-block shrink-0" />
-                  {b}
-                </span>
-              ))}
+          <div className="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-xs mb-5 border-l-2 border-tx-red pl-3">
+                Our Story
+              </p>
+              <h1 className="text-white mb-5">About Austin Premier Concrete</h1>
+              <p className="text-blue-200 text-lg mb-8 leading-relaxed">
+                Family-owned and operated out of Austin, TX since 2009. Built on honest pricing,
+                quality work, and a crew that treats your property like their own.
+              </p>
+              <div className="flex flex-wrap gap-3 text-sm text-blue-200">
+                {["Family-Owned Since 2009", "Licensed & Insured", "2,500+ Projects", "5-Star Rated"].map((b) => (
+                  <span key={b} className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-tx-red inline-block shrink-0" />
+                    {b}
+                  </span>
+                ))}
+              </div>
             </div>
+            <HeroQuoteForm id="about-quote-form" />
           </div>
         </section>
 
         {/* Story section */}
         <section className="section-padding bg-white">
-          <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Our History</p>
               <h2 className="mb-4">Built on Austin Dirt</h2>
@@ -68,20 +70,18 @@ export default function AboutPage() {
                 even 40 years without major repairs.
               </p>
             </div>
-            <div className="bg-tx-blue-50 rounded-2xl p-10 border border-tx-blue-100">
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { stat: "15+", label: "Years in Austin" },
-                  { stat: "2,500+", label: "Projects Completed" },
-                  { stat: "5★", label: "Average Rating" },
-                  { stat: "100%", label: "Licensed & Insured" },
-                ].map((item) => (
-                  <div key={item.label} className="bg-white rounded-xl p-6 shadow-sm border border-tx-blue-100 text-center">
-                    <div className="text-4xl font-bold font-display text-tx-red mb-1">{item.stat}</div>
-                    <div className="text-gray-600 text-sm">{item.label}</div>
-                  </div>
-                ))}
-              </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { stat: "15+", label: "Years in Austin" },
+                { stat: "2,500+", label: "Projects Completed" },
+                { stat: "5★", label: "Average Rating" },
+                { stat: "100%", label: "Licensed & Insured" },
+              ].map((item) => (
+                <div key={item.label} className="bg-tx-blue-50 rounded-xl p-6 border border-tx-blue-100 text-center">
+                  <div className="text-4xl font-bold font-display text-tx-red mb-1">{item.stat}</div>
+                  <div className="text-gray-600 text-sm">{item.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -110,7 +110,7 @@ export default function AboutPage() {
                 },
               ].map(({ Icon, title, desc }) => (
                 <div key={title} className="bg-white rounded-xl p-8 shadow-sm border border-tx-blue-100">
-                  <div className="w-10 h-10 bg-tx-blue-50 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 bg-tx-blue-50 rounded-lg flex items-center justify-center mb-4 border border-tx-blue-100">
                     <Icon size={20} className="text-tx-blue" />
                   </div>
                   <h3 className="mb-2 text-tx-blue">{title}</h3>
@@ -123,14 +123,14 @@ export default function AboutPage() {
 
         {/* Service area */}
         <section className="section-padding bg-white">
-          <div className="max-w-6xl mx-auto px-4 text-center">
+          <div className="max-w-6xl mx-auto px-4">
             <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Where We Work</p>
             <h2 className="mb-4">Serving Greater Austin</h2>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-600 mb-8 max-w-2xl">
               We work throughout Austin and the surrounding metro — from Round Rock in the north
               to Kyle and Buda in the south, Cedar Park to the northwest, and Pflugerville to the east.
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap gap-3">
               {[
                 "Austin", "Round Rock", "Cedar Park", "Pflugerville",
                 "Georgetown", "Kyle", "Buda", "Leander", "Manor", "Hutto",
@@ -142,13 +142,6 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-
-        {/* Quote form */}
-        <QuoteSection
-          heading="Let's Talk About Your Project"
-          subheading="Free estimates. No pressure. Just honest concrete work from a crew that's been serving Austin for over 15 years."
-          formId="about-quote-form"
-        />
 
       </main>
       <Footer />

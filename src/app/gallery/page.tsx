@@ -1,7 +1,7 @@
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import QuoteSection from "@/components/QuoteSection";
+import HeroQuoteForm from "@/components/HeroQuoteForm";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,31 +30,34 @@ export default function GalleryPage() {
       <Header />
       <main className="flex-1">
 
-        {/* Hero */}
-        <section className="bg-tx-blue text-white py-16 px-4 relative overflow-hidden">
+        {/* Hero — 2-column with embedded quote form */}
+        <section className="bg-tx-blue text-white py-20 px-4 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-tx-blue-700 via-tx-blue to-tx-blue-600" aria-hidden="true" />
           <div
             className="absolute right-0 top-0 h-full w-1/2 opacity-[0.04] pointer-events-none"
             style={{ background: "repeating-linear-gradient(135deg, #fff 0, #fff 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }}
             aria-hidden="true"
           />
-          <div className="relative max-w-6xl mx-auto">
-            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-xs mb-5 border-l-2 border-tx-red pl-3">
-              Our Work
-            </p>
-            <h1 className="text-white mb-4">Project Gallery</h1>
-            <p className="text-blue-200 max-w-2xl text-lg">
-              A sample of completed projects across Austin and surrounding areas.
-              Every job is completed by our own crew — no subcontractors.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3 text-sm text-blue-200">
-              {["Driveways", "Patios & Decks", "Foundations", "Retaining Walls", "Flatwork"].map((b) => (
-                <span key={b} className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-tx-red inline-block shrink-0" />
-                  {b}
-                </span>
-              ))}
+          <div className="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-xs mb-5 border-l-2 border-tx-red pl-3">
+                Our Work
+              </p>
+              <h1 className="text-white mb-5">Project Gallery</h1>
+              <p className="text-blue-200 text-lg mb-8 leading-relaxed">
+                A sample of completed projects across Austin and surrounding areas.
+                Every job is completed by our own crew — no subcontractors.
+              </p>
+              <div className="flex flex-wrap gap-3 text-sm text-blue-200">
+                {["Driveways", "Patios & Decks", "Foundations", "Retaining Walls", "Flatwork"].map((b) => (
+                  <span key={b} className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-tx-red inline-block shrink-0" />
+                    {b}
+                  </span>
+                ))}
+              </div>
             </div>
+            <HeroQuoteForm id="gallery-quote-form" />
           </div>
         </section>
 
@@ -83,28 +86,28 @@ export default function GalleryPage() {
               {projects.map((p, i) => (
                 <div
                   key={i}
-                  className="group rounded-xl overflow-hidden border border-gray-200 border-t-4 border-t-tx-blue-100 hover:border-t-tx-red hover:shadow-lg transition-all"
+                  className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all"
                 >
-                  <div className={`h-52 ${p.bg} flex items-center justify-center relative`}>
-                    <span className="text-gray-500 text-sm font-medium opacity-60">[ Photo Coming Soon ]</span>
-                    <span className="absolute top-3 left-3 bg-white/90 text-tx-red text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                  <div className={`h-52 ${p.bg} relative`}>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-gray-500 text-sm font-medium opacity-50">Photo Coming Soon</span>
+                    </div>
+                    <span className="absolute top-3 left-3 bg-tx-blue text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
                       {p.category}
                     </span>
                   </div>
-                  <div className="p-5">
+                  <div className="p-5 border-t-4 border-t-tx-blue-100 group-hover:border-t-tx-red transition-all">
                     <h4 className="font-bold mb-1 group-hover:text-tx-red transition-colors">{p.title}</h4>
-                    <p className="text-gray-500 text-sm flex items-center gap-1">
-                      <span className="text-tx-blue">📍</span> {p.location}
-                    </p>
+                    <p className="text-gray-500 text-sm">{p.location}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10 bg-tx-blue-50 border border-tx-blue-100 rounded-xl p-8 text-center">
+            <div className="mt-10 border border-gray-200 rounded-xl p-8 text-center">
               <p className="text-gray-600 text-sm">
                 More photos available — call us or{" "}
-                <Link href="/contact" className="text-tx-red font-medium hover:underline">
+                <Link href="/contact" className="text-tx-red font-semibold hover:underline">
                   send a message
                 </Link>{" "}
                 to see examples matching your project type.
@@ -112,13 +115,6 @@ export default function GalleryPage() {
             </div>
           </div>
         </section>
-
-        {/* Quote form */}
-        <QuoteSection
-          heading="Ready for Your Own Project?"
-          subheading="Get a free estimate and see what Austin Premier Concrete can build for you. We come to your site — no obligation."
-          formId="gallery-quote-form"
-        />
 
       </main>
       <Footer />
