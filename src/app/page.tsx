@@ -127,6 +127,20 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Google Map — Austin, TX */}
+        <section className="w-full h-64" aria-label="Austin, TX service area map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111029.76571505!2d-97.8284501!3d30.2271530!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b599a0cc032f%3A0x5d9b464bd469d57a!2sAustin%2C%20TX!5e0!3m2!1sen!2sus!4v1711300000000!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style={{ border: 0, display: "block" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Austin TX service area"
+          />
+        </section>
+
         {/* CTA */}
         <section className="bg-tx-red text-white py-16 px-4">
           <div className="max-w-3xl mx-auto text-center">

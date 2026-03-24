@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 330" role="img" aria-label="Austin Premier Concrete">
+  <defs>
+    <clipPath id="logo-clip">
+      <rect x="9" y="9" width="502" height="312" rx="26" ry="26"/>
+    </clipPath>
+  </defs>
+
+  <!-- White outer border -->
+  <rect x="2" y="2" width="516" height="326" rx="31" ry="31" fill="white"/>
+
+  <!-- Main dark navy background -->
+  <rect x="9" y="9" width="502" height="312" rx="26" ry="26" fill="#002868"/>
+
+  <!-- APC letters -->
+  <text
+    x="260" y="196"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    font-family="'Arial Black', 'Franklin Gothic Heavy', Impact, sans-serif"
+    font-size="168"
+    font-weight="900"
+    fill="white"
+    letter-spacing="-4"
+  >APC</text>
+
+  <!-- Bottom three sections, clipped to rounded rect -->
+  <g clip-path="url(#logo-clip)">
+    <!-- Red AUSTIN section -->
+    <rect x="9" y="238" width="155" height="83" fill="#bf0a30"/>
+    <!-- White/light PREMIER section -->
+    <rect x="168" y="238" width="184" height="83" fill="#f4f4f4"/>
+    <!-- Navy CONCRETE section -->
+    <rect x="356" y="238" width="155" height="83" fill="#002868"/>
+    <!-- Dark gaps between sections -->
+    <rect x="164" y="238" width="4" height="83" fill="#001840"/>
+    <rect x="352" y="238" width="4" height="83" fill="#001840"/>
+  </g>
+
+  <!-- Bottom text labels -->
+  <text x="91" y="290"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="21" font-weight="800" fill="white" letter-spacing="2.5">AUSTIN</text>
+  <text x="260" y="290"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="21" font-weight="700" fill="#002868" letter-spacing="1">PREMIER</text>
+  <text x="434" y="290"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="21" font-weight="800" fill="white" letter-spacing="1.5">CONCRETE</text>
+</svg>

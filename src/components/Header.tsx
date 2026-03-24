@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
 
 const navLinks = [
@@ -29,11 +30,15 @@ export default function Header() {
 
       {/* Main nav */}
       <nav className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold font-display text-tx-blue leading-none">
-            Austin Premier<br />
-            <span className="text-tx-red">Concrete</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.svg"
+            alt="Austin Premier Concrete"
+            width={148}
+            height={94}
+            priority
+            className="h-14 w-auto"
+          />
         </Link>
 
         {/* Desktop links */}
