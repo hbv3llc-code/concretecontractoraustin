@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroQuoteForm from "@/components/HeroQuoteForm";
 import { services } from "@/data/services";
 import { reviews } from "@/data/reviews";
-import { Award, ClipboardList, ShieldCheck, Star, Phone } from "lucide-react";
+import { Award, ClipboardList, ShieldCheck, Star } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -12,47 +13,48 @@ export default function HomePage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="bg-tx-blue text-white py-28 px-4 relative overflow-hidden">
+        <section className="bg-tx-blue text-white py-20 px-4 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-tx-blue-700 via-tx-blue to-tx-blue-600" />
-          {/* Subtle geometric accent */}
           <div className="absolute right-0 top-0 h-full w-1/2 opacity-[0.04] pointer-events-none"
             style={{ background: "repeating-linear-gradient(135deg, #fff 0, #fff 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }} />
-          <div className="relative max-w-6xl mx-auto">
-            <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-xs mb-5 border-l-2 border-tx-red pl-3">
-              Austin&apos;s Premier Concrete Contractor
-            </p>
-            <h1 className="text-white text-5xl sm:text-6xl font-bold font-display leading-tight mb-6 max-w-3xl">
-              Austin&apos;s Concrete Contractor — Built on Reputation
-            </h1>
-            <p className="text-blue-200 text-lg mb-10 max-w-2xl leading-relaxed">
-              Precision concrete installation for driveways, patios, foundations, and flatwork.
-              Serving the greater Austin metro since 2009 with licensed crews, transparent pricing,
-              and a written satisfaction guarantee.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="tel:+15127890000" className="btn-primary inline-flex items-center gap-2">
-                <Phone size={16} />
-                Call Now — Free Estimate
+          <div className="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left — copy */}
+            <div>
+              <p className="text-tx-red-100 font-semibold uppercase tracking-widest text-xs mb-5 border-l-2 border-tx-red pl-3">
+                Austin&apos;s Premier Concrete Contractor
+              </p>
+              <h1 className="text-white text-5xl sm:text-6xl font-bold font-display leading-tight mb-6">
+                Austin&apos;s Concrete Contractor — Built on Reputation
+              </h1>
+              <p className="text-blue-200 text-lg mb-8 leading-relaxed">
+                Precision concrete installation for driveways, patios, foundations, and flatwork.
+                Serving the greater Austin metro since 2009 with licensed crews, transparent pricing,
+                and a written satisfaction guarantee.
+              </p>
+              <a href="#hero-quote-form" className="btn-primary inline-flex items-center gap-2 tracking-widest">
+                GET A FREE ESTIMATE
               </a>
-              <Link href="/services" className="btn-outline-white">
-                View Our Services
-              </Link>
+
+              {/* Trust badges */}
+              <div className="mt-10 flex flex-wrap gap-3 text-sm text-blue-200">
+                {[
+                  "Licensed & Insured",
+                  "5-Star Rated",
+                  "Free Written Estimates",
+                  "15+ Years Experience",
+                ].map((b) => (
+                  <span key={b} className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-tx-red inline-block shrink-0" />
+                    {b}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            {/* Trust badges */}
-            <div className="mt-12 flex flex-wrap gap-4 text-sm text-blue-200">
-              {[
-                "Licensed & Insured",
-                "5-Star Rated",
-                "Free Written Estimates",
-                "15+ Years Experience",
-              ].map((b) => (
-                <span key={b} className="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-tx-red inline-block shrink-0" />
-                  {b}
-                </span>
-              ))}
-            </div>
+            {/* Right — quote form */}
+            <HeroQuoteForm />
+
           </div>
         </section>
 
@@ -149,15 +151,12 @@ export default function HomePage() {
               Contact us today for a free, no-pressure estimate. We&apos;ll visit your site, measure up,
               and deliver a written quote within 24–48 hours.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+15127890000" className="bg-white text-tx-red font-bold px-8 py-4 rounded-md hover:bg-red-50 transition-colors inline-flex items-center gap-2">
-                <Phone size={16} />
-                (512) 789-0000
-              </a>
-              <Link href="/contact" className="btn-outline-white">
-                Request Estimate Online
-              </Link>
-            </div>
+            <Link
+              href="/contact"
+              className="bg-white text-tx-red font-bold px-10 py-4 rounded-md hover:bg-red-50 transition-colors inline-block tracking-widest text-sm uppercase"
+            >
+              Request a Free Quote
+            </Link>
           </div>
         </section>
 

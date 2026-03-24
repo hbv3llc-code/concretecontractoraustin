@@ -56,9 +56,9 @@ export default function Header() {
         </ul>
 
         <div className="hidden md:flex items-center gap-3">
-          <a href="tel:+15127890000" className="btn-primary text-sm py-2 px-5">
-            Free Estimate
-          </a>
+          <Link href="/#hero-quote-form" className="btn-primary text-sm py-2 px-5 tracking-widest">
+            Get a Free Estimate
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -95,9 +95,9 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <a href="tel:+15127890000" className="btn-primary w-full mt-4 text-center">
-            Free Estimate
-          </a>
+          <Link href="/#hero-quote-form" className="btn-primary w-full mt-4 text-center tracking-widest" onClick={() => setOpen(false)}>
+            Get a Free Estimate
+          </Link>
         </div>
       )}
     </header>
