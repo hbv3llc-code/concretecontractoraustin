@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import HeroQuoteForm from "@/components/HeroQuoteForm";
 import ServiceIcon from "@/components/ServiceIcon";
 import { services } from "@/data/services";
+import { cities } from "@/data/cities";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -105,6 +106,30 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 <span key={city} className="bg-tx-blue-50 border border-tx-blue-100 text-tx-blue px-4 py-2 rounded-full text-sm font-medium">
                   {city}
                 </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Areas We Serve */}
+        <section className="section-padding section-alt">
+          <div className="max-w-6xl mx-auto px-4">
+            <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Service Area</p>
+            <h2 className="mb-4">{service.title} Across Greater Austin</h2>
+            <p className="text-gray-600 mb-8 max-w-2xl">
+              We provide {service.title.toLowerCase()} services throughout Austin and all surrounding cities.
+              Click your city for local pricing information, neighborhoods served, and area-specific FAQs.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {cities.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/service-areas/${city.slug}/${slug}`}
+                  className="bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm font-medium text-gray-700 hover:text-tx-red hover:border-tx-red-100 hover:shadow-sm transition-all flex items-center gap-2"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-tx-red shrink-0" />
+                  {city.name}
+                </Link>
               ))}
             </div>
           </div>
