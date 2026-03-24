@@ -7,6 +7,7 @@ import { MapPin, Phone } from "lucide-react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/service-areas", label: "Service Areas" },
   { href: "/about", label: "About" },
   { href: "/gallery", label: "Gallery" },
   { href: "/faq", label: "FAQ" },

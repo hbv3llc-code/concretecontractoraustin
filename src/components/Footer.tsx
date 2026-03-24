@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { services } from "@/data/services";
+import { cities } from "@/data/cities";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-tx-blue text-blue-100 pt-14 pb-8">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Brand */}
         <div className="md:col-span-1">
           <Image
@@ -30,6 +31,22 @@ export default function Footer() {
               <li key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="text-blue-200 hover:text-white transition-colors">
                   {s.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Service Areas */}
+        <div>
+          <h4 className="text-white font-semibold mb-3 uppercase tracking-wider text-xs">
+            <Link href="/service-areas" className="hover:text-tx-red-100 transition-colors">Service Areas</Link>
+          </h4>
+          <ul className="space-y-2 text-sm">
+            {cities.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/service-areas/${c.slug}`} className="text-blue-200 hover:text-white transition-colors">
+                  {c.name}
                 </Link>
               </li>
             ))}
