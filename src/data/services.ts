@@ -92,4 +92,46 @@ export const services: Service[] = [
       "Decorative face finishes",
     ],
   },
+  {
+    slug: "stamped-decorative-concrete",
+    title: "Stamped & Decorative Concrete",
+    shortDesc: "Custom stamped patterns, staining, and decorative finishes for driveways, patios, and walkways.",
+    longDesc:
+      "Decorative concrete transforms ordinary slabs into stunning surfaces. We offer stamped concrete in dozens of patterns — brick, slate, cobblestone, wood plank — along with acid staining, color hardeners, and exposed aggregate finishes. Perfect for driveways, patios, pool decks, and entryways that need to make an impression.",
+    icon: "✨",
+    features: [
+      "Stamped patterns & textures",
+      "Acid stain & color hardeners",
+      "Exposed aggregate finishes",
+      "UV-stable sealers applied",
+    ],
+  },
+  {
+    slug: "concrete-removal",
+    title: "Concrete Removal & Demolition",
+    shortDesc: "Professional concrete removal and demolition — no subcontractors, no mess left behind.",
+    longDesc:
+      "Old concrete must come out before a new pour can go in. Our crews handle full concrete removal and demolition using the proper equipment — jackhammers, skid steers, and debris hauling — so the site is clean and ready for the next phase. We never subcontract removal work, so quality stays consistent from demo to pour.",
+    icon: "🏗️",
+    features: [
+      "Full slab & partial removal",
+      "Jackhammer & mechanical demo",
+      "Debris hauling & disposal",
+      "Site graded & prepped for new pour",
+    ],
+  },
+  {
+    slug: "commercial-concrete",
+    title: "Commercial Concrete",
+    shortDesc: "Reliable commercial concrete services for businesses, builders, and developers across Austin.",
+    longDesc:
+      "From warehouse floors and loading docks to commercial parking lots and retail entryways, Austin Premier Concrete has the crew size, equipment, and experience to handle commercial-scale pours on schedule. We work with general contractors, developers, and business owners throughout the Austin metro — meeting inspections, deadlines, and budget requirements.",
+    icon: "🏢",
+    features: [
+      "Warehouse & industrial floors",
+      "Parking lots & loading docks",
+      "ADA-compliant flatwork",
+      "General contractor partnerships",
+    ],
+  },
 ];
