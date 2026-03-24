@@ -11,10 +11,10 @@ export default function Footer() {
         {/* Brand */}
         <div className="md:col-span-1">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="Austin Premier Concrete"
-            width={148}
-            height={94}
+            width={689}
+            height={400}
             className="h-14 w-auto mb-4 brightness-90"
           />
           <p className="text-sm leading-relaxed text-blue-200">

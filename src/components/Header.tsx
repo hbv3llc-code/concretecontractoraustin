@@ -32,10 +32,10 @@ export default function Header() {
       <nav className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="Austin Premier Concrete"
-            width={148}
-            height={94}
+            width={689}
+            height={400}
             priority
             className="h-14 w-auto"
           />
