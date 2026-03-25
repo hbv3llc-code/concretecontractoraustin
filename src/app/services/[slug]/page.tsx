@@ -4,8 +4,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroQuoteForm from "@/components/HeroQuoteForm";
 import ServiceIcon from "@/components/ServiceIcon";
+import ServicePhoto from "@/components/ServicePhoto";
 import { services } from "@/data/services";
 import { cities } from "@/data/cities";
+import { getServiceBody } from "@/data/serviceBodyContent";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -65,13 +67,28 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </div>
         </section>
 
-        {/* Service content */}
+        {/* Service intro — 2/3 text + 1/3 visual */}
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="max-w-3xl">
-              <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Overview</p>
-              <h2 className="mb-4">About Our {service.title} Service</h2>
-              <p className="text-gray-600 leading-relaxed text-lg">{service.longDesc}</p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+
+              {/* Text — 2/3 */}
+              <div className="lg:col-span-2">
+                <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Overview</p>
+                <h2 className="mb-6">About Our {service.title} Service</h2>
+                <p className="text-gray-700 leading-relaxed text-lg mb-5">{service.longDesc}</p>
+                <div className="space-y-5">
+                  {getServiceBody(service.slug).map((para, i) => (
+                    <p key={i} className="text-gray-600 leading-relaxed">{para}</p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Visual — 1/3 */}
+              <div className="lg:col-span-1">
+                <ServicePhoto serviceSlug={service.slug} serviceTitle={service.title} />
+              </div>
+
             </div>
           </div>
         </section>
