@@ -8,8 +8,10 @@ import { cities, getCityBySlug } from "@/data/cities";
 import { services } from "@/data/services";
 import { getCityServiceFaqs } from "@/data/cityServiceFaqs";
 import { getCityServiceIntro } from "@/data/cityServiceContent";
+import { getServiceBody } from "@/data/serviceBodyContent";
 import { servicePricing } from "@/data/servicePricing";
 import { serviceProcesses } from "@/data/serviceProcess";
+import ServicePhoto from "@/components/ServicePhoto";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -180,43 +182,58 @@ export default async function CityServicePage({
           </div>
         </section>
 
-        {/* ─── City-specific intro ─── */}
+        {/* ─── City-specific intro — 2/3 text + 1/3 visual ─── */}
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+
+              {/* Text — 2/3 */}
               <div className="lg:col-span-2">
                 <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">About This Service</p>
-                <h2 className="mb-4">{service.title} in {city.name}</h2>
-                <p className="text-gray-600 leading-relaxed text-lg mb-5">{cityIntro}</p>
-                <p className="text-gray-600 leading-relaxed">{service.longDesc}</p>
-              </div>
-              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-                <p className="font-bold text-tx-blue text-sm mb-4 uppercase tracking-wide">Why Austin Premier Concrete</p>
-                <ul className="space-y-3">
-                  {[
-                    "Licensed Texas contractor",
-                    "General liability + workers' comp",
-                    "Our own crew — no subcontractors",
-                    "Free written estimates",
-                    "Permit coordination included",
-                    `Serving all ${city.name} neighborhoods`,
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-gray-700">
-                      <span className="w-4 h-4 rounded-full bg-tx-red flex items-center justify-center shrink-0 mt-0.5">
-                        <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 10 8">
-                          <path d="M1 4l2.5 2.5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </span>
-                      {item}
-                    </li>
+                <h2 className="mb-6">{service.title} in {city.name}</h2>
+                <p className="text-gray-700 leading-relaxed text-lg mb-5">{cityIntro}</p>
+                <p className="text-gray-600 leading-relaxed mb-5">{service.longDesc}</p>
+                <div className="space-y-5">
+                  {getServiceBody(service.slug).slice(0, 2).map((para, i) => (
+                    <p key={i} className="text-gray-600 leading-relaxed">{para}</p>
                   ))}
-                </ul>
-                <a
-                  href="tel:+15127890000"
-                  className="mt-6 block w-full text-center bg-tx-red text-white font-bold py-3 rounded-xl hover:bg-red-700 transition-colors text-sm"
-                >
-                  Call (512) 789-0000
-                </a>
+                </div>
+              </div>
+
+              {/* Right column — 1/3: image card + trust sidebar stacked */}
+              <div className="lg:col-span-1 flex flex-col gap-6">
+
+                <ServicePhoto serviceSlug={service.slug} serviceTitle={service.title} city={city.name} />
+
+                <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                  <p className="font-bold text-tx-blue text-sm mb-4 uppercase tracking-wide">Why Austin Premier Concrete</p>
+                  <ul className="space-y-3">
+                    {[
+                      "Licensed Texas contractor",
+                      "General liability + workers' comp",
+                      "Our own crew — no subcontractors",
+                      "Free written estimates",
+                      "Permit coordination included",
+                      `Serving all ${city.name} neighborhoods`,
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm text-gray-700">
+                        <span className="w-4 h-4 rounded-full bg-tx-red flex items-center justify-center shrink-0 mt-0.5">
+                          <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 10 8">
+                            <path d="M1 4l2.5 2.5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="tel:+15127890000"
+                    className="mt-6 block w-full text-center bg-tx-red text-white font-bold py-3 rounded-xl hover:bg-red-700 transition-colors text-sm"
+                  >
+                    Call (512) 789-0000
+                  </a>
+                </div>
+
               </div>
             </div>
           </div>
