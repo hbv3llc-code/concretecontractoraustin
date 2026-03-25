@@ -6,6 +6,8 @@ import HeroQuoteForm from "@/components/HeroQuoteForm";
 import ServiceIcon from "@/components/ServiceIcon";
 import { cities, getCityBySlug } from "@/data/cities";
 import { services } from "@/data/services";
+import { getCityBody } from "@/data/cityBodyContent";
+import CityPhoto from "@/components/CityPhoto";
 import { MapPin } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -126,9 +128,32 @@ export default async function CityPage({
           </div>
         </section>
 
-        {/* Services in this city */}
+        {/* City intro — 2/3 text + 1/3 visual */}
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mb-20">
+
+              {/* Text — 2/3 */}
+              <div className="lg:col-span-2">
+                <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">About This Area</p>
+                <h2 className="mb-6">Concrete Contractor in {city.name}, TX</h2>
+                <div className="space-y-5">
+                  {getCityBody(city).map((para, i) => (
+                    <p key={i} className={`leading-relaxed ${i === 0 ? "text-gray-700 text-lg" : "text-gray-600"}`}>
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Visual — 1/3 */}
+              <div className="lg:col-span-1">
+                <CityPhoto city={city} />
+              </div>
+
+            </div>
+
+            {/* Services grid */}
             <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Services</p>
             <h2 className="mb-4">Concrete Services in {city.name}</h2>
             <p className="text-gray-600 mb-10 max-w-2xl">
