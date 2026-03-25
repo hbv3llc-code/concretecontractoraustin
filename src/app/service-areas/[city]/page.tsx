@@ -184,9 +184,12 @@ export default async function CityPage({
           <div className="max-w-6xl mx-auto px-4">
             <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Local Coverage</p>
             <h2 className="mb-4">Neighborhoods We Serve in {city.name}</h2>
-            <p className="text-gray-600 mb-6 max-w-2xl">
+            <p className="text-gray-600 mb-4 max-w-2xl">
               We work throughout {city.name} and all surrounding neighborhoods. If you&apos;re
               unsure whether we cover your area, just call — we&apos;re likely closer than you think.
+            </p>
+            <p className="text-gray-600 mb-8 max-w-2xl">
+              Our crew travels to {city.name} on a regular schedule — not as a special trip. That means Austin-level service at Austin pricing, with no mileage fees added to your quote. We&apos;re familiar with the site conditions, permit requirements, and neighborhood logistics that come with working throughout {city.county} County, which means fewer surprises and smoother projects from start to finish.
             </p>
             <div className="flex flex-wrap gap-3">
               {city.neighborhoods.map((n) => (
@@ -206,7 +209,10 @@ export default async function CityPage({
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <p className="text-tx-red font-semibold uppercase tracking-widest text-xs mb-2">Why Us</p>
-            <h2 className="mb-8">Why {city.name} Homeowners Choose Us</h2>
+            <h2 className="mb-4">Why {city.name} Homeowners Choose Us</h2>
+            <p className="text-gray-600 mb-8 max-w-2xl">
+              {city.name} homeowners have plenty of concrete contractor options, but most work in this area is done by crews traveling from Austin with a subcontractor model — meaning the company you call isn&apos;t necessarily the crew that shows up. We operate differently: every job is handled by our own licensed crew, pricing reflects the actual cost of the work with no travel overhead, and our familiarity with {city.name}&apos;s soil conditions, building department, and {city.county} County permit process means fewer delays and no unexpected costs mid-project.
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 { title: "No Travel Surcharge", desc: `${city.name} jobs are priced the same as Austin — no mileage fees.` },
