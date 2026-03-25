@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { cities } from "@/data/cities";
 import { services } from "@/data/services";
 
-const BASE_URL = "https://www.austinpremierconcrete.com";
+const BASE_URL = "https://austinconcretecontractors.co";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

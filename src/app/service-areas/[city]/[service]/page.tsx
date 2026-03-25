@@ -68,10 +68,10 @@ export default async function CityServicePage({
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.austinpremierconcrete.com" },
-          { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.austinpremierconcrete.com/service-areas" },
-          { "@type": "ListItem", position: 3, name: city.name, item: `https://www.austinpremierconcrete.com/service-areas/${city.slug}` },
-          { "@type": "ListItem", position: 4, name: service.title, item: `https://www.austinpremierconcrete.com/service-areas/${city.slug}/${service.slug}` },
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://austinconcretecontractors.co" },
+          { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://austinconcretecontractors.co/service-areas" },
+          { "@type": "ListItem", position: 3, name: city.name, item: `https://austinconcretecontractors.co/service-areas/${city.slug}` },
+          { "@type": "ListItem", position: 4, name: service.title, item: `https://austinconcretecontractors.co/service-areas/${city.slug}/${service.slug}` },
         ],
       },
       {
@@ -79,8 +79,8 @@ export default async function CityServicePage({
         name: "Austin Premier Concrete",
         description: `${service.title} contractor serving ${city.name}, TX and surrounding areas.`,
         telephone: "+15127890000",
-        email: "info@austinpremierconcrete.com",
-        url: "https://www.austinpremierconcrete.com",
+        email: "info@austinconcretecontractors.co",
+        url: "https://austinconcretecontractors.co",
         address: {
           "@type": "PostalAddress",
           streetAddress: "",

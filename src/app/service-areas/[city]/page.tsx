@@ -42,8 +42,8 @@ export default async function CityPage({
     name: "Austin Premier Concrete",
     description: `Licensed concrete contractor serving ${city.name}, TX and surrounding areas.`,
     telephone: "+15127890000",
-    email: "info@austinpremierconcrete.com",
-    url: "https://www.austinpremierconcrete.com",
+    email: "info@austinconcretecontractors.co",
+    url: "https://austinconcretecontractors.co",
     address: {
       "@type": "PostalAddress",
       streetAddress: "",
@@ -75,7 +75,7 @@ export default async function CityPage({
         itemOffered: {
           "@type": "Service",
           name: `${s.title} in ${city.name}, TX`,
-          url: `https://www.austinpremierconcrete.com/service-areas/${city.slug}/${s.slug}`,
+          url: `https://austinconcretecontractors.co/service-areas/${city.slug}/${s.slug}`,
         },
       })),
     },

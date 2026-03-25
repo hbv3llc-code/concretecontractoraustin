@@ -82,8 +82,8 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:info@austinpremierconcrete.com" className="text-blue-200 hover:text-white transition-colors flex items-center gap-2">
-                <Mail size={14} className="opacity-60 shrink-0" /> info@austinpremierconcrete.com
+              <a href="mailto:info@austinconcretecontractors.co" className="text-blue-200 hover:text-white transition-colors flex items-center gap-2">
+                <Mail size={14} className="opacity-60 shrink-0" /> info@austinconcretecontractors.co
               </a>
             </li>
             <li className="text-blue-200 flex items-center gap-2">
