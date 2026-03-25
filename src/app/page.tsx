@@ -117,7 +117,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {reviews.map((r) => (
                 <div key={r.name} className="border border-gray-200 rounded-xl p-6 flex flex-col gap-3">
-                  <div className="flex text-lg" style={{ color: "#FBBC05" }}>{"★".repeat(r.rating)}</div>
+                  <div className="flex" style={{ color: "#FBBC05", fontSize: "1.6875rem" }}>{"★".repeat(r.rating)}</div>
                   <p className="text-gray-700 text-sm leading-relaxed">&quot;{r.text}&quot;</p>
                   <div className="mt-auto">
                     <p className="font-semibold text-gray-900">{r.name}</p>
